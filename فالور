@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HZR TikTok</title>
+  <style>
+    body {
+      background: #15131c;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      background: #252131;
+      border-radius: 20px;
+      padding: 24px;
+      max-width: 400px;
+      margin: 30px auto;
+    }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: 0;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    button {
+      background: #ff4f91;
+      color: white;
+    }
+    #result {
+      margin-top: 20px;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎵 HZR TikTok</h1>
+    <p>یوزرنیم تیک‌تاک را وارد کن</p>
+    <input id="username" placeholder="@username">
+    <button onclick="checkUser()">بررسی یوزرنیم</button>
+    <div id="result"></div>
+    <p>این نسخهٔ اولیه است؛ هنوز به API تیک‌تاک وصل نیست.</p>
+  </div>
+
+  <script>
+    function checkUser() {
+      let username = document.getElementById("username").value.trim();
+      if (username.startsWith("@")) username = username.slice(1);
+
+      document.getElementById("result").textContent =
+        username
+          ? "یوزرنیم واردشده: @" + username +
+            " — برای دریافت آمار واقعی، اتصال رسمی لازم است."
+          : "لطفاً یوزرنیم را وارد کن.";
+    }
+  </script>
+</body>
+</html>
